@@ -1,0 +1,258 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Tw Cen MT Condensed", sans-serif;
+  margin: 20px 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#homePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#clockContainer {
+  background: none; 
+  box-shadow: none; 
+  border: none; 
+}
+#digitalClock img {
+  width: 100px;
+  height: auto; 
+  max-height: 150px; 
+  object-fit: contain; 
+}
+.clock-image {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+#pendingImages {
+  display: none !important;
+}
+#digitalClock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+  flex-wrap: nowrap;
+}
+
+.colon {
+  font-size: 2rem; 
+  line-height: 1; 
+  margin: 0 5px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#toUploadPage {
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  font-size: 1.5rem;
+  border: 2px solid black; 
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#toUploadPage:hover {
+  background-color: lightgray; 
+}
+
+#uploadPage {
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+#backButton {
+  background-color: transparent;
+  border: none;
+  margin-top: 0; 
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+#backButton:hover {
+  background-color: none;
+}
+
+#selectPart {
+  margin-bottom: 40px;
+}
+#selectPart h5 {
+  margin-bottom: 11px;
+}
+
+#numberSelector {
+  display: flex;
+  gap: 9px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.numberButton {
+  font-size: 0.7rem;
+  width: 30px;
+  height: 30px;
+  font-weight: bold; 
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.numberButton:hover {
+  background-color: lightgray;
+}
+
+#inputContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+#canvasContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#clearCanvas,
+#eraserButton {
+  border: 2px solid black; 
+  background-color: white;
+  font-size: 15px;
+  padding: 0px 10px;
+  cursor: pointer;      
+}
+
+#clearCanvas:hover,
+#eraserButton:hover {
+  background-color: lightgray;
+}
+
+#eraserButton.no-border {
+  border: none;
+}
+
+#penSizeContainer {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 5px;
+}
+
+.pen-size {
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  min-width: none;
+  min-height: 0;
+  font-size: 0;
+  line-height: 0%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.pen-size.selected {
+  background-color: black;
+}
+
+#penIconButton {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+}
+#penIconButton:hover{
+  background-color: lightgray;
+}
+
+#penColor {
+  opacity: 0; 
+  position: absolute; 
+  z-index: -1;
+  width: 1px; 
+  height: 1px; 
+}
+
+#controls {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 20px;
+  color: black; 
+  padding: 5px;
+  gap: 10px;
+  margin-left: 5px;
+  margin-bottom: 35px;
+  border: none;
+}
+
+#postButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#postStatus {
+  margin-top: 10px;
+  margin-bottom: 3px;
+  font-size: 1rem;
+  color: gray;
+  text-align: flex-start;
+}
+
+@media (max-width: 600px) {
+  #inputContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  #canvasAndControls {
+    flex-direction: column;
+    align-items: center;
+  }
+  #postButton {
+    width: 80%;
+  }
+  #canvasContainer, #fileUploadContainer {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
