@@ -311,6 +311,40 @@ clearCanvas.addEventListener('click', () => {
   ctx.fillStyle = "white";
   ctx.fillRect(0, 0, drawCanvas.width, drawCanvas.height);
 });
+// タッチ操作をサポート
+drawCanvas.addEventListener('touchstart', (e) => {
+  if (e.touches.length > 0) {
+    const touch = e.touches[0];
+    const rect = drawCanvas.getBoundingClientRect();
+    lastX = touch.clientX - rect.left;
+    lastY = touch.clientY - rect.top;
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    drawing = true;
+  }
+  e.preventDefault(); // スクロールなどを無効化
+}, { passive: false });
+
+drawCanvas.addEventListener('touchmove', (e) => {
+  if (drawing && e.touches.length > 0) {
+    const touch = e.touches[0];
+    const rect = drawCanvas.getBoundingClientRect();
+    const currentX = touch.clientX - rect.left;
+    const currentY = touch.clientY - rect.top;
+    
+    ctx.lineTo(currentX, currentY);
+    ctx.stroke();
+    
+    lastX = currentX;
+    lastY = currentY;
+  }
+  e.preventDefault();
+}, { passive: false });
+
+drawCanvas.addEventListener('touchend', () => {
+  drawing = false;
+});
+
 window.selectedNumber = null;
 document.addEventListener("DOMContentLoaded", function() {
   const numberButtons = document.querySelectorAll('.numberButton');
