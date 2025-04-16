@@ -10,11 +10,22 @@ body {
   justify-content: center;
 }
 
+
 h1 {
   font-family: "Tw Cen MT Condensed", sans-serif;
-  margin: 20px 0;
+  margin: 0;
   font-size: 2rem;
   text-align: center;
+  padding: 0;
+}
+#bottomRightControls {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:0;
 }
 
 #homePage {
