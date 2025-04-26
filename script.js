@@ -143,6 +143,7 @@ const toUploadPageButton = document.getElementById('toUploadPage');
 toUploadPageButton.addEventListener('click', () => {
   homePage.style.display = 'none';
   uploadPage.style.display = 'block';
+  toUploadPageButton.style.display = 'none'; 
 });
  setTimeout(() => {
   const postButton = document.getElementById("postButton");
@@ -180,6 +181,7 @@ toUploadPageButton.addEventListener('click', () => {
       backButton.addEventListener('click', () => {
         uploadPage.style.display = 'none';
         homePage.style.display = 'block';
+        toUploadPageButton.style.display = 'block';
       });
     } else {
       console.error(" backButton not found!");
