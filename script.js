@@ -88,18 +88,20 @@ async function updateClockWithImages() {
   if (Object.keys(numberImages).length === 0) {
     numberImages = await fetchAndDisplayImages();
   }
-  const now = new Date();
-  const gmtTime = new Date(now.toUTCString());
-  const hours = String(gmtTime.getHours()).padStart(2, '0');
-  const minutes = String(gmtTime.getMinutes()).padStart(2, '0');
-  const seconds = String(gmtTime.getSeconds()).padStart(2, '0');
+  
+const now = new Date(); 
+const hours = String(now.getUTCHours()).padStart(2, '0');
+const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+const seconds = String(now.getUTCSeconds()).padStart(2, '0');
+
   const timeString = `${hours}:${minutes}:${seconds}`;
   const digitalClock = document.getElementById('digitalClock');
   if (!digitalClock) {
     return; 
   }
   digitalClock.innerHTML = "";
-  const nowSeconds = Math.floor(Date.now() / 1000); 
+const nowSeconds = Math.floor(new Date().getTime() / 1000);
+
   for (let i = 0; i < timeString.length; i++) {
     const char = timeString[i];
     if (char === ":") {
@@ -125,7 +127,8 @@ async function updateClockWithImages() {
 }
 function getCurrentTimeString() {
   const now = new Date();
-  return now.toLocaleTimeString("en-US", { hour12: false }); 
+return now.toLocaleTimeString("en-GB", { hour12: false, timeZone: "UTC" });
+
 }
 window.onload = async function () {
   await fetchAndDisplayImages(true); 
