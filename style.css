@@ -11,16 +11,16 @@ body {
 }
 
 #bottomRightControls {
-   position: fixed;
-  bottom: 0;
-  right: 0;
+  position: fixed;
+  bottom: 10px; /* use some space so it's not stuck to the very edge */
+  right: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 1px;
+  align-items: flex-end; /* ensures the text aligns to the right if needed */
   font-size: 1rem;
-  text-align: center;
+  text-align: right; /* aligns text inside the box */
   padding: 0;
+  margin: 0;
 }
 
 #homePage {
