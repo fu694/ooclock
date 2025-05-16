@@ -12,13 +12,13 @@ body {
 
 #bottomRightControls {
   position: fixed;
-  bottom: 10px; /* use some space so it's not stuck to the very edge */
+  bottom: 10px;
   right: 10px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* ensures the text aligns to the right if needed */
+  align-items: flex-end;
   font-size: 1rem;
-  text-align: right; /* aligns text inside the box */
+  text-align: right;
   padding: 0;
   margin: 0;
 }
