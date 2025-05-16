@@ -19,12 +19,13 @@ h3 {
 }
 #bottomRightControls {
   position: fixed;
-  bottom: 30px;
-  right: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:0;
+  margin: 1px;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0;
 }
 
 #homePage {
